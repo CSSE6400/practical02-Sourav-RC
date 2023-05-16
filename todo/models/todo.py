@@ -1,4 +1,4 @@
-import datatime
+import datetime
 from . import db
 
 
@@ -11,9 +11,9 @@ class Todo(db.Model):
     completed = db.Column(db.Boolean, nullable=False, default=False)
     deadline_at = db.Column(db.DateTime, nullable=True)
     created_at = db.Column(db.DateTime, nullable=False,
-                           default=datatime.datetime.utcnow)
+                           default=datetime.datetime.utcnow)
     updated_at = db.Column(db.DateTime, nullable=False,
-                           default=datatime.datetime.utcnow, onupdate=datatime.datetime.utcnow)
+                           default=datetime.datetime.utcnow, onupdate=datetime.datetime.utcnow)
 
     def to_dict(self):
         return {
